@@ -5,7 +5,7 @@
     "author": "Espadas",
     "category": "Uncategorized",
     "version": "0.1",
-    "depends": ["base"],
+    "depends": ["base", "website"],
     "data": [
         "security/ir.model.access.csv",
         "views/actions.xml",

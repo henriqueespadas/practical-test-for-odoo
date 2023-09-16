@@ -2,20 +2,22 @@ from odoo import http
 
 
 class EcommerceAPI(http.Controller):
-
-    @http.route('/api/product', type='json', auth='public')
+    @http.route(["/api/product"], type="json", auth="public", website=True)
     def list_products(self):
-        Product = http.request.env['ecom_espadas.produto']
-        products = Product.search([])
-        return {
-            'products': [(p.id, p.nome) for p in products]
-        }
+        products_list = http.request.env["ecom_espadas.product"]
+        products = products_list.search([])
+        return {"products": [(p.id, p.name) for p in products]}
 
-    @http.route('/api/cart/add', type='json', auth='user')
-    def add_to_cart(self, product_id, quantity):
-        Cart = http.request.env['ecom_espadas.carrinho']
-        cart = Cart._your_method_to_get_or_create_cart()
+    @http.route("/api/cart/add", type="json", auth="public", website=True)
+    def add_to_cart(self):
+        json_data = http.request.jsonrequest
+        product_id = json_data.get("product_id")
+        quantity = json_data.get("quantity")
+
+        if product_id is None or quantity is None:
+            return {"status": "failure", "message": "Invalid parameters"}
+
+        instance_cart = http.request.env["ecom_espadas.cart"]
+        cart = instance_cart.get_or_create_cart()
         cart.add_product(product_id, quantity)
-        return {'status': 'success'}
-
-
+        return {"status": "success"}
