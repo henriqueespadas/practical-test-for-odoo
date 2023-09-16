@@ -1,0 +1,28 @@
+<odoo>
+
+    <record id="cart_form_view" model="ir.ui.view">
+        <field name="name">ecom_espadas.form.view</field>
+        <field name="model">ecom_espadas.cart</field>
+        <field name="arch" type="xml">
+            <form string="Ecommerce Espadas">
+                <sheet>
+                    <group>
+                        <field name="line_ids"/>
+                        <field name="total_amount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cart_tree_view" model="ir.ui.view">
+        <field name="name">ecom_espadas.tree.view</field>
+        <field name="model">ecom_espadas.cart</field>
+        <field name="arch" type="xml">
+            <tree string="Ecommerce Espadas">
+                <field name="line_ids"/>
+                <field name="total_amount"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

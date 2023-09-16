@@ -1,0 +1,27 @@
+<odoo>
+    <record id="order_line_form" model="ir.ui.view">
+        <field name="name">order.view.form</field>
+        <field name="model">ecom_espadas.order</field>
+        <field name="arch" type="xml">
+            <form string="Order">
+                <sheet>
+                    <group>
+                        <field name="line_ids"/>
+                        <field name="total_amount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="order_line_tree" model="ir.ui.view">
+        <field name="name">order.view.tree</field>
+        <field name="model">ecom_espadas.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="line_ids"/>
+                <field name="total_amount"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

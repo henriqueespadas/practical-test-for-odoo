@@ -1,0 +1,33 @@
+<odoo>
+
+    <record id="orcer_line_form" model="ir.ui.view">
+        <field name="name">Order Line Form</field>
+        <field name="model">ecom_espadas.order_line</field>
+        <field name="arch" type="xml">
+            <form string="Order Line">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="order_id"/>
+                        <field name="subtotal"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="order_line_tree" model="ir.ui.view">
+        <field name="name">Order Line Tree</field>
+        <field name="model">ecom_espadas.order_line</field>
+        <field name="arch" type="xml">
+            <tree string="Order Line">
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="order_id"/>
+                <field name="subtotal"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

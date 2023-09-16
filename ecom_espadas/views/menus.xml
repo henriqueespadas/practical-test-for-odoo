@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="menu_ecom_espadas" name="Ecommerce Espadas"  sequence="30"/>
+
+    <menuitem id="menu_ecom_espadas_cart" name="Cart" parent="menu_ecom_espadas" action="action_ecom_espadas_cart" sequence="10"/>
+    <menuitem id="menu_ecom_espadas_order" name="Order" parent="menu_ecom_espadas" action="action_ecom_espadas_order" sequence="20"/>
+    <menuitem id="menu_ecom_espadas_order_line" name="Order Line" parent="menu_ecom_espadas" action="action_ecom_espadas_order_line" sequence="30"/>
+    <menuitem id="menu_ecom_espadas_cart_line" name="Cart Line" parent="menu_ecom_espadas" action="action_ecom_espadas_cart_line" sequence="40"/>
+    <menuitem id="menu_ecom_espadas_product" name="Product" parent="menu_ecom_espadas" action="action_ecom_espadas_product" sequence="50"/>
+
+</odoo>

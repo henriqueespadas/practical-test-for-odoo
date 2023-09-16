@@ -1,0 +1,33 @@
+<odoo>
+
+    <record id="cart_line_form_view" model="ir.ui.view">
+        <field name="name">cart_line.form.view</field>
+        <field name="model">ecom_espadas.cart_line</field>
+        <field name="arch" type="xml">
+            <form string="Ecommerce Espadas">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="cart_id"/>
+                        <field name="subtotal"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cart_line_tree_view" model="ir.ui.view">
+        <field name="name">cart_line.tree.view</field>
+        <field name="model">ecom_espadas.cart_line</field>
+        <field name="arch" type="xml">
+            <tree string="Ecommerce Espadas">
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="cart_id"/>
+                <field name="subtotal"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

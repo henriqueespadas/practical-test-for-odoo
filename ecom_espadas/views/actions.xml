@@ -1,0 +1,33 @@
+<odoo>
+
+    <record id="action_ecom_espadas_cart" model="ir.actions.act_window">
+        <field name="name">Cart</field>
+        <field name="res_model">ecom_espadas.cart</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecom_espadas_product" model="ir.actions.act_window">
+        <field name="name">Product</field>
+        <field name="res_model">ecom_espadas.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecom_espadas_cart_line" model="ir.actions.act_window">
+        <field name="name">Cart Line</field>
+        <field name="res_model">ecom_espadas.cart_line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecom_espadas_order" model="ir.actions.act_window">
+        <field name="name">Order</field>
+        <field name="res_model">ecom_espadas.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecom_espadas_order_line" model="ir.actions.act_window">
+        <field name="name">Order Line</field>
+        <field name="res_model">ecom_espadas.order_line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
