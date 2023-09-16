@@ -21,3 +21,29 @@ class EcommerceAPI(http.Controller):
         cart = instance_cart.get_or_create_cart()
         cart.add_product(product_id, quantity)
         return {"status": "success"}
+
+    @http.route('/api/cart/remove', type='json', auth='public', website=True)
+    def remove_from_cart(self):
+        json_data = http.request.jsonrequest
+        product_id = json_data.get('product_id')
+
+        if product_id is None:
+            return {"status": "failure", "message": "Invalid parameters"}
+
+        instance_cart = http.request.env["ecom_espadas.cart"]
+        cart = instance_cart.get_or_create_cart()
+        cart.remove_product(product_id)
+        return {"status": "success"}
+
+    @http.route('/api/cart/checkout', type='json', auth='public', website=True)
+    def checkout(self):
+        instance_cart = http.request.env["ecom_espadas.cart"]
+        cart = instance_cart.get_or_create_cart()
+
+        if not cart.line_ids:
+            return {"status": "failure", "message": "Cart is empty"}
+
+        order_id = cart.checkout()
+        return {"status": "success", "order_id": order_id}
+
+

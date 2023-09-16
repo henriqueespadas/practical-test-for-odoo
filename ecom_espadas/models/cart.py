@@ -47,3 +47,12 @@ class Cart(models.Model):
             cart_line.create(
                 {"product_id": product_id, "quantity": quantity, "cart_id": self.id}
             )
+
+    def remove_product(self, product_id):
+        cart_line = self.env["ecom_espadas.cart_line"]
+        existing_line = cart_line.search(
+            [("product_id", "=", product_id), ("cart_id", "=", self.id)], limit=1
+        )
+        if existing_line:
+            existing_line.unlink()
+
