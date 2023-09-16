@@ -55,4 +55,3 @@ class Cart(models.Model):
         )
         if existing_line:
             existing_line.unlink()
-
