@@ -1,0 +1,9 @@
+<odoo>
+    <record id="action_foreign_exchange_rate" model="ir.actions.act_window">
+        <field name="name">Foreign Exchange Rates</field>
+        <field name="res_model">account.foreign.exchange.rate</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="coin_conversion.view_foreign_exchange_rate_tree"/>
+    </record>
+</odoo>
+

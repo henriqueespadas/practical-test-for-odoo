@@ -1,0 +1,32 @@
+<odoo>
+
+    <record id="view_foreign_exchange_rate_tree" model="ir.ui.view">
+        <field name="name">foreign.exchange.rate.tree</field>
+        <field name="model">account.foreign.exchange.rate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="currency_from_id"/>
+                <field name="currency_to_id"/>
+                <field name="exchange_rate"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_foreign_exchange_rate_form" model="ir.ui.view">
+        <field name="name">foreign.exchange.rate.form</field>
+        <field name="model">account.foreign.exchange.rate</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="currency_from_id"/>
+                        <field name="currency_to_id"/>
+                        <field name="exchange_rate"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

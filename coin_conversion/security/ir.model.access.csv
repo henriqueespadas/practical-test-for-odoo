@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_coin_conversion_foreign_exchange_rate,model_coin_conversion_foreign_exchange_rate,model_account_foreign_exchange_rate,,1,0,0,0
+access_coin_conversion_foreign_exchange_rate_group_user,model_coin_conversion_foreign_exchange_rate,model_account_foreign_exchange_rate,base.group_user,1,1,1,1

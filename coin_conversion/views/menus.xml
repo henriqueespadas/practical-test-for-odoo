@@ -1,0 +1,5 @@
+<odoo>
+
+     <menuitem id="menu_foreign_exchange_rate" name="Foreign Exchange Rates" parent="account.menu_finance_configuration" action="coin_conversion.action_foreign_exchange_rate"/>
+
+</odoo>
