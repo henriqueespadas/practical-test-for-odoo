@@ -17,21 +17,13 @@ class AccountInvoiceIntegration(models.Model):
 
     @api.model
     def _send_invoice_to_external_system(self, invoice):
-        print('Sending invoice to external system.')
-        api_url = 'https://de798585-0b42-4765-b4f8-7f2c5230e8d9.mock.pstmn.io//api/invoices'
-
+        api_endpoint = self.env['ir.config_parameter'].sudo().get_param('api_endpoint')
         payload = {
             'invoice_number': invoice.name,
             'amount': invoice.amount_total,
         }
 
-        response = requests.post(api_url, json=payload)
-
-        if response.status_code == 200:
-            print("Successfully sent invoice to external system.")
-        else:
-            print("Failed to send invoice to external system.")
-
+        response = requests.post(api_endpoint, json=payload)
         vals = {
             'invoice_id': invoice.id,
             'status': 'success' if response.status_code == 200 else 'error',
