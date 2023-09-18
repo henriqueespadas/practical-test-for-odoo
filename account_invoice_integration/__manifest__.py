@@ -5,6 +5,6 @@
     'author': 'Espadas',
     'data': [
         "security/ir.model.access.csv",
-        "views/invoice_api_config_views.xml",
+        "data/invoice_api_config.xml",
     ],
 }
